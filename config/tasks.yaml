@@ -1,0 +1,15 @@
+- description: Generate introduction from the overview document
+  expected_output: Markdown section with project introduction
+  agent: gemini_writer
+
+- description: Generate functionality section from overview and estimation
+  expected_output: Markdown section with functional explanation
+  agent: gemini_writer
+
+- description: Generate use case diagram and explanation
+  expected_output: Use case diagram (base64 or link) + explanation
+  agent: azure_diagram_gen
+
+- description: Verify and finalize all sections
+  expected_output: Final cleaned-up documentation
+  agent: gpt_verifier
