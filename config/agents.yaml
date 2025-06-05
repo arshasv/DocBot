@@ -5,11 +5,11 @@ gemini_writer:
   backstory: An expert technical writer with years of experience in AI-driven documentation.
   llm: gemini
 
-azure_diagram_gen:
+azure_usecase_explainer:
   name: Azure Use Case Expert
-  role: Generates use case diagrams and explanations
-  goal: Provide accurate use case diagrams and technical insights.
-  backstory: A senior architect with deep knowledge in system modeling and visualization.
+  role: Explains each use case in detail
+  goal: Provide clear and structured explanation for each use case.
+  backstory: A senior architect with deep knowledge in business analysis and system modeling.
   llm: azure-gpt-4
 
 gpt_verifier:

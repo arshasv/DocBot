@@ -1,5 +1,5 @@
-crewai==0.119.0
-crewai_tools>=0.44.0
+crewai==0.108.0
+crewai_tools==0.38.1
 python-dotenv>=1.0.0
 litellm>=1.34.10
 python-dotenv
@@ -7,9 +7,11 @@ PyMuPDF==1.22.3
 pandas
 openai
 google-generativeai
-pyyaml
+PyYAML==6.0.2
 openpyxl
 markdown
 pdfkit
 python-docx
 litellm
+PyMuPDF
+git+https://github.com/NikhilVijayakumar/Amsha.git@master#egg=Amsha

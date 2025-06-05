@@ -1,4 +1,4 @@
-import fitz  # PyMuPDF
+import fitz
 import pandas as pd
 
 def extract_project_details(overview_path, estimation_path):

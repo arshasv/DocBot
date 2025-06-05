@@ -21,13 +21,13 @@ with open("config/tasks.yaml") as f:
 # Create LLM instances
 gemini_llm = LLM(
     provider="gemini",
-    model=os.getenv("MODEL"),  # e.g., "gemini/gemini-pro"
+    model=os.getenv("MODEL"), 
     api_key=os.getenv("GEMINI_API_KEY")
 )
 
 azure_gpt_llm = LLM(
     provider="azure",
-    model=os.getenv("MODEL_NAME"),  # e.g., "gpt-4"
+    model=os.getenv("MODEL_NAME"), 
     api_key=os.getenv("OPENAI_API_KEY"),
     api_base=os.getenv("OPENAI_API_BASE"),
     api_version=os.getenv("OPENAI_API_VERSION")
@@ -54,8 +54,8 @@ for name, config in agents_config.items():
 # Create Tasks
 tasks = []
 for task_cfg in tasks_config:
-    agent_name = task_cfg.pop("agent")  # Remove 'agent' from the dict
-    agent_obj = agents[agent_name]      # Lookup the actual Agent object
+    agent_name = task_cfg.pop("agent") 
+    agent_obj = agents[agent_name]     
     tasks.append(Task(**task_cfg, agent=agent_obj))
 
 # Extract inputs
