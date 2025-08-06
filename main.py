@@ -6,6 +6,7 @@ from crewai.llm import LLM
 import yaml
 import litellm
 
+
 litellm._turn_on_debug()
 
 # Load .env variables
@@ -26,11 +27,12 @@ gemini_llm = LLM(
 )
 
 azure_gpt_llm = LLM(
-    provider="azure",
+    provider="openai",
     model=os.getenv("MODEL_NAME"), 
     api_key=os.getenv("OPENAI_API_KEY"),
     api_base=os.getenv("OPENAI_API_BASE"),
-    api_version=os.getenv("OPENAI_API_VERSION")
+    # api_version=os.getenv("OPENAI_API_VERSION")
+
 )
 
 # Create Agents
