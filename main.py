@@ -13,11 +13,29 @@ litellm._turn_on_debug()
 load_dotenv()
 
 # Load agent & task YAMLs
-with open("config/agents.yaml") as f:
-    agents_config = yaml.safe_load(f)
+class ConfigLoader:
+    def __init__(self, agents_path="config/agents.yaml", tasks_path="config/tasks.yaml"):
+        self.agents_path = agents_path
+        self.tasks_path = tasks_path
 
-with open("config/tasks.yaml") as f:
-    tasks_config = yaml.safe_load(f)
+    def load_agents(self):
+        return self._load_yaml(self.agents_path)
+
+    def load_tasks(self):
+        return self._load_yaml(self.tasks_path)
+
+    def _load_yaml(self, path):
+        with open(path, 'r') as file:
+            return yaml.safe_load(file)
+        
+config_loader = ConfigLoader()
+agents_config = config_loader.load_agents()
+tasks_config = config_loader.load_tasks()
+# with open("config/agents.yaml") as f:
+#     agents_config = yaml.safe_load(f)
+
+# with open("config/tasks.yaml") as f:
+#     tasks_config = yaml.safe_load(f)
 
 # Create LLM instances
 gemini_llm = LLM(
