@@ -1,9 +1,10 @@
 from crewai.llm import LLM
 from dotenv import load_dotenv
-load_dotenv()
 import os
 from crewai import Crew, Agent, Task
 from helpers.config_loader import ConfigLoader
+
+load_dotenv()
 
 class crew_job:
     def __init__(self):
