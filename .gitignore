@@ -177,3 +177,6 @@ cython_debug/
 .env
 
 dbenv
+
+config/app_config.yaml
+config/llm_config.yaml

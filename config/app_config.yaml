@@ -1,7 +1,0 @@
-backend: "mongo"
-domain_root_path: "./config/crew_config"
-
-mongo:
-  uri: "mongodb://localhost:27017/"
-  
-  db_name: "docbot_db"
