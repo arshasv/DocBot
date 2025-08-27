@@ -1,0 +1,13 @@
+crew:
+  name: "Document Crew"
+  usecase: "Document"
+  description: "Crew for generating Functional document"
+
+  agents:
+    azure_usecase_explainer: azure_usecase_explainer  # references an existing agent config
+    gpt_verifier: gpt_verifier                     # references an existing agent config
+    gemini_writer: gemini_writer                     # references an existing agent config
+  tasks:
+    ad_copy_task: ad_copy_task           # references an existing task config
+
+

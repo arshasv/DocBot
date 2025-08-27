@@ -1,3 +1,5 @@
-- description: Generate functionality section from overview and estimation
+task:
+  name: Functionality Documentation  
+  description: Generate functionality section from overview and estimation
   expected_output: Markdown section with functional explanation
   agent: gemini_writer

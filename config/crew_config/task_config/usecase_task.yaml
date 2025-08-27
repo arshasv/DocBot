@@ -1,3 +1,5 @@
-- description: Generate use case explanations based on overview and estimation
+task:
+  name: Use Case Documentation  
+  description: Generate use case explanations based on overview and estimation
   expected_output: Detailed explanation for each use case in markdown format
   agent: azure_usecase_explainer
