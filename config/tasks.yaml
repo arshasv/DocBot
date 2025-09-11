@@ -1,5 +1,5 @@
 - name: introduction_task
-  description: Generate introduction from the overview document
+  description: Generate introduction from the overview document {overview}
   expected_output: Markdown section with project introduction
   agent: gemini_writer
 
