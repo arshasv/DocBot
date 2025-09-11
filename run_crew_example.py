@@ -36,7 +36,7 @@ print(f"[Main] Successfully built LLM: {actual_llm.model}")
 
 crew_runtime_data = {
     "llm": actual_llm,
-    "module_name": "copy",
+    "module_name": "Document",
     "output_dir_path": "output/intermediate"
 }
 
@@ -45,7 +45,7 @@ print("\n[Main] Requesting the CrewBuilderService with the real LLM...")
 crew_builder = crew_container.crew_builder_service(**crew_runtime_data)
 
 blueprint_service = crew_container.crew_blueprint_service()
-config_data:Optional[CrewConfigResponse] = blueprint_service.get_config(name="Copy Crew", usecase="copy")
+config_data:Optional[CrewConfigResponse] = blueprint_service.get_config(name="Document Crew", usecase="document")
 
 
 
@@ -56,19 +56,35 @@ if not config_data:
 print(f"[Main] Blueprint for crew '{config_data.name}' loaded successfully.")
 agents = config_data.agents
 tasks = config_data.tasks
-agent_id = agents.get("copywriter_agent")
-task_id = tasks.get("ad_copy_task")
 
-print(f"agent_id ={agent_id}\n task_id ={task_id}\n ")
+agent_objects = {}
 
-try:
+# 1. Add all agents
+for agent_key, agent_id in agents.items():
+    print(f"[Main] Adding agent: {agent_key} ({agent_id})")
     crew_builder.add_agent(agent_id=agent_id)
-    agent =crew_builder.get_last_agent()
+    # Save the actual agent object for task assignment later
+    agent_objects[agent_key] = crew_builder.get_last_agent()
+
+# 2. Add all tasks
+for task_key, task_id in tasks.items():
+    # --- Option A: Assign to a specific agent (if you define a mapping later) ---
+    # assigned_agent = agent_objects.get("writer")  # Example: always give to writer
+
+    # --- Option B: Default to the first agent (simple fallback) ---
+    assigned_agent = next(iter(agent_objects.values()))
+
+    print(f"[Main] Adding task: {task_key} ({task_id}) -> {assigned_agent}")
     crew_builder.add_task(
         task_id=task_id,
-        agent=agent,
-        output_filename="ad_copy_results"
+        agent=assigned_agent,
+        output_filename=f"{task_key}_results"
     )
+
+
+
+try:
+    
 
     ad_crew = crew_builder.build()
 

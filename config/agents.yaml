@@ -10,11 +10,11 @@ azure_usecase_explainer:
   role: Explains each use case in detail
   goal: Provide clear and structured explanation for each use case.
   backstory: A senior architect with deep knowledge in business analysis and system modeling.
-  llm: azure-gpt-4
+  llm: gemini
 
 gpt_verifier:
   name: GPT Verifier
   role: Reviews and verifies generated documentation
   goal: Ensure all outputs are accurate, complete, and aligned with the input documents.
   backstory: A critical QA expert that verifies every word of documentation.
-  llm: azure-gpt-4
+  llm: gemini

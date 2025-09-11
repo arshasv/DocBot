@@ -54,6 +54,10 @@ class crew_job:
             self.tasks.append(Task(**task_cfg, agent=agent_obj))
         return  self.tasks
     def crew_run(self):
+        if not hasattr(self, "agents"):
+            self.create_agents()
+        if not hasattr(self, "tasks"):
+            self.create_tasks()
         # Create Crew instance
         crew = Crew(agents=list(self.agents.values()), tasks=self.tasks)
         # Run the crew job

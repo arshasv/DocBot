@@ -1,0 +1,5 @@
+task:
+  name: Verification and Finalization
+  description: Verify and finalize all sections
+  expected_output: Final cleaned-up documentation
+  agent: gpt_verifier

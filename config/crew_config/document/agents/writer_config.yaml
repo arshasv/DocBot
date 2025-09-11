@@ -1,4 +1,4 @@
-gemini_writer:
+agent:
   name: Gemini Writer
   role: Writes general documentation sections
   goal: Generate clear and concise documentation.
