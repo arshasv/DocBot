@@ -1,19 +1,41 @@
 - name: introduction_task
-  description: Generate introduction from the overview document {overview}
-  expected_output: Markdown section with project introduction
+  description: 
+    Generate a clear and concise introduction section using the overview {overview}.
+    Summarize the project purpose, context, and high-level goals.
+  expected_output: 
+    A markdown-formatted "Introduction" section that provides readers with
+    a quick understanding of the project’s background and objectives.
   agent: gemini_writer
 
 - name: functionality_task
-  description: Generate functionality section from overview and estimation
-  expected_output: Markdown section with functional explanation
+  description: 
+    Produce a functionality section based on the overview {overview} and estimation {estimation}.
+    Highlight the system’s main features, technical scope, and overall workflow.
+  expected_output: 
+    A markdown "Functionality" section that explains system behavior and
+    outlines the key technical components.
   agent: gemini_writer
 
 - name: usecase_task
-  description: Generate use case explanations based on overview and estimation
-  expected_output: Detailed explanation for each use case in markdown format
+  description: 
+    Generate detailed use case explanations using the overview {overview} and estimation {estimation}.
+    For each use case, describe actors, workflows, and expected outcomes.
+  expected_output: 
+    A markdown-formatted "Use Cases" section with a clear breakdown of each
+    use case, structured for both business and technical readers.
   agent: azure_usecase_explainer
 
 - name: verify_task
-  description: Verify and finalize all sections
-  expected_output: Final cleaned-up documentation
+  description: 
+    Review and verify all generated sections (Introduction, Functionality, Use Cases)
+    against the source inputs- overview {overview} and estimation {estimation}.
+    Ensure the generated content is accurate, consistent, and complete.
+    Resolve any inconsistencies and finalize the documentation.
+  expected_output: 
+    A finalized markdown document containing polished and verified sections-
+    Introduction, Functionality, and Use Cases.
   agent: gpt_verifier
+  depends_on:
+    - introduction_task
+    - functionality_task
+    - usecase_task

@@ -50,8 +50,10 @@ class crew_job:
         self.tasks = []
         for task_cfg in self.tasks_config:
             agent_name = task_cfg.pop("agent") 
-            agent_obj = self.agents[agent_name]     
-            self.tasks.append(Task(**task_cfg, agent=agent_obj))
+            print(agent_name)
+            agents = self.create_agents()
+            agent_obj = agents[agent_name]     
+            self.tasks.append(Task(**task_cfg, agent=agent_obj))   
         return  self.tasks
     def crew_run(self):
         if not hasattr(self, "agents"):
@@ -62,4 +64,3 @@ class crew_job:
         crew = Crew(agents=list(self.agents.values()), tasks=self.tasks)
         # Run the crew job
         return crew
-

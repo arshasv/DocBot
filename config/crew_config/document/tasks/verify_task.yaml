@@ -1,5 +1,15 @@
 task:
-  name: Verification and Finalization
-  description: Verify and finalize all sections
-  expected_output: Final cleaned-up documentation
+  name: verify_task
+  description: 
+    Review and verify all generated sections (Introduction, Functionality, Use Cases)
+    against the source inputs- overview {overview} and estimation {estimation}.
+    Ensure the generated content is accurate, consistent, and complete.
+    Resolve any inconsistencies and finalize the documentation.
+  expected_output: 
+    A finalized markdown document containing polished and verified sections-
+    Introduction, Functionality, and Use Cases.
   agent: gpt_verifier
+  depends_on:
+    - introduction_task
+    - functionality_task
+    - usecase_task

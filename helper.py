@@ -32,9 +32,22 @@ def extract_project_details(overview_path, estimation_path):
     estimation_data = pd.read_excel(estimation_path)
     return overview_text, estimation_data
 
+# def generate_final_document(tasks):
+#     sections = []
+#     for task in tasks:
+#         sections.append(f"## {task.name}\n{task.output}\n")
+#     with open("output/functional_documentation.md", "w") as f:
+#         f.writelines(sections)
 def generate_final_document(tasks):
-    sections = []
-    for task in tasks:
-        sections.append(f"## {task.name}\n{task.output}\n")
+    verifier_task = next((t for t in tasks if t.name == "verify_task"), None)
+
+    if verifier_task:
+        content = f"# Final Verified Documentation\n{verifier_task.output}\n"
+    else:
+        sections = [f"## {t.name}\n{t.output}\n" for t in tasks]
+        content = "".join(sections)
+
     with open("output/functional_documentation.md", "w") as f:
-        f.writelines(sections)
+        f.write(content)
+
+

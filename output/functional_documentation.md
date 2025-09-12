@@ -1,506 +1,356 @@
-## introduction_task
-# Introduction: AI-Driven Legacy Code Modernization
-
-This project focuses on AI-Driven Legacy Code Modernization, employing a scalable approach to transform outdated systems. The core objective is to automate the modernization process by leveraging artificial intelligence to analyze legacy code and generate modern, maintainable applications.
-
-The system is designed to create a structured front-end and back-end architecture based on the specific use case and target framework. Following the architecture generation, the system automatically generates code, significantly reducing the manual effort and time required for legacy code modernization. This approach ensures that the modernized application is aligned with current technology standards and best practices.
-## functionality_task
-## Functionality
-
-The AI-Driven Legacy Code Modernization system provides the following core functionalities:
-
-*   **Legacy Code Analysis:** Employs AI algorithms to thoroughly analyze the structure, dependencies, and functionality of the legacy code. This analysis forms the foundation for understanding the existing system and planning the modernization strategy.
-*   **Architecture Generation:** Automatically generates a modern application architecture tailored to the specific needs of the legacy system and the target framework. This includes defining the front-end and back-end structure, API endpoints, and data models.
-*   **Automated Code Generation:** Converts the legacy code into a modern codebase based on the generated architecture. This involves translating the original code into the target language and framework, while ensuring functionality is preserved and optimized.
-*   **Use Case Specific Adaptation:** The AI intelligently adapts the modernized code to specific use cases, ensuring that the new application meets the evolving requirements of the business.
-*   **Target Framework Compatibility:** The system supports multiple target frameworks, allowing users to choose the most appropriate technology stack for their modernized application.
-*   **Maintainability Enhancement:** The generated code adheres to modern coding standards and best practices, resulting in a more maintainable and scalable application.
-*   **Scalable Modernization Process:** The system is designed to handle large and complex legacy systems, providing a scalable solution for modernization initiatives of any size.
-## usecase_task
+# Final Verified Documentation
 ```markdown
-## Use Case Explanations
+## Introduction
 
-This section details each use case within the AI-Driven Legacy Code Modernization system, providing a comprehensive understanding of their purpose, actors, and flow.
+This project, **AI-Driven Legacy Code Modernization – A Scalable Approach**, addresses the challenges inherent in maintaining and evolving aging software systems. Legacy code often presents significant obstacles to innovation and efficiency due to its outdated technologies, complex structure, and lack of documentation.
 
-### 1. Analyze Legacy Code
+The primary purpose of this project is to develop an AI-driven system that automates key aspects of legacy code modernization. The system will analyze existing codebases, propose suitable front-end and back-end architectures based on the use case and target framework, and automatically generate modernized code.
 
-**Description:** This use case describes the process of analyzing existing legacy code using AI algorithms to understand its structure, dependencies, and functionality. The analysis provides the foundation for creating an effective modernization strategy.
+At a high level, the project aims to:
 
-**Actors:**
+*   **Automate Architecture Generation:** Create front-end and back-end architecture folder structures tailored to specific use cases and frameworks.
+*   **Automate Code Generation:** Generate code based on the proposed architecture, reducing manual effort and accelerating the modernization process.
+*   **Provide a Scalable Solution:** Develop a system that can be applied to a wide range of legacy codebases, regardless of size or complexity.
 
-*   **System Administrator:** Initiates the analysis process by uploading or pointing the system to the legacy code repository.
-*   **AI Analysis Engine:** Automatically analyzes the legacy code.
+By achieving these goals, this project seeks to provide a scalable and efficient solution for modernizing legacy systems, enabling organizations to leverage the benefits of modern technologies while preserving their existing investments.
 
-**Preconditions:**
-
-*   The AI-Driven Legacy Code Modernization system is operational.
-*   The legacy code is accessible to the system.
-*   Appropriate user authentication and authorization are in place.
-
-**Main Flow:**
-
-1.  The System Administrator logs into the system and navigates to the Legacy Code Analysis module.
-2.  The System Administrator uploads the legacy code or provides a connection string to the legacy code repository.
-3.  The System Administrator configures the analysis parameters (e.g., programming language, code complexity thresholds).
-4.  The System Administrator initiates the analysis.
-5.  The AI Analysis Engine parses the legacy code.
-6.  The AI Analysis Engine identifies code structure, dependencies, and potential issues.
-7.  The AI Analysis Engine generates a report summarizing the analysis results, including code complexity metrics, dependency graphs, and identified anti-patterns.
-8.  The system stores the analysis report.
-9.  The System Administrator reviews the analysis report.
-
-**Postconditions:**
-
-*   An analysis report of the legacy code is generated and stored in the system.
-*   The System Administrator has reviewed the analysis report and has a clear understanding of the legacy code's characteristics.
-
-**Alternative Flows:**
-
-*   **Invalid Code Input:** If the uploaded code is invalid or unsupported, the system displays an error message and prompts the System Administrator to provide valid code.
-*   **Analysis Failure:** If the analysis fails due to unexpected errors, the system logs the error and notifies the System Administrator.
-
-### 2. Generate Modern Architecture
-
-**Description:** This use case defines the automatic generation of a modern application architecture based on the legacy code analysis and specified target framework. The architecture includes front-end and back-end structures, API endpoints, and data models.
-
-**Actors:**
-
-*   **System Administrator:** Configures the target framework and architectural preferences.
-*   **Architecture Generation Engine:** Automatically generates the modern application architecture.
-
-**Preconditions:**
-
-*   The legacy code analysis has been completed.
-*   The target framework and architectural preferences are defined.
-
-**Main Flow:**
-
-1.  The System Administrator navigates to the Architecture Generation module.
-2.  The System Administrator selects the target framework (e.g., React, Angular, Vue.js for the front-end; Spring Boot, Node.js, .NET Core for the back-end).
-3.  The System Administrator specifies architectural preferences (e.g., microservices, monolithic).
-4.  The System Administrator initiates the architecture generation.
-5.  The Architecture Generation Engine analyzes the legacy code analysis report.
-6.  The Architecture Generation Engine designs the front-end structure, including UI components and navigation flows.
-7.  The Architecture Generation Engine designs the back-end structure, including API endpoints, data models, and business logic components.
-8.  The Architecture Generation Engine generates a detailed architecture blueprint.
-9.  The system stores the architecture blueprint.
-10. The System Administrator reviews and approves the architecture blueprint.
-
-**Postconditions:**
-
-*   A modern application architecture blueprint is generated and stored in the system.
-*   The System Administrator has reviewed and approved the architecture blueprint.
-
-**Alternative Flows:**
-
-*   **Unsupported Framework:** If the selected target framework is not supported, the system displays an error message.
-*   **Architecture Generation Failure:** If the architecture generation fails, the system logs the error and notifies the System Administrator.
-*   **Architecture Modification Request:** If the System Administrator requires architectural changes the architecture generation engine can regenerate according to input.
-
-### 3. Automatically Generate Code
-
-**Description:** This use case details the automatic generation of modern code from legacy code based on the generated architecture. This includes translating the original code into the target language and framework while preserving and optimizing functionality.
-
-**Actors:**
-
-*   **Code Generation Engine:** Automatically converts the legacy code into a modern codebase.
-
-**Preconditions:**
-
-*   The modern architecture has been generated and approved.
-*   The target framework has been selected.
-
-**Main Flow:**
-
-1.  The Code Generation Engine retrieves the legacy code analysis report and the architecture blueprint.
-2.  The Code Generation Engine translates the legacy code into the target language and framework.
-3.  The Code Generation Engine generates the front-end code based on the front-end architecture.
-4.  The Code Generation Engine generates the back-end code based on the back-end architecture.
-5.  The Code Generation Engine integrates the generated code components.
-6.  The Code Generation Engine performs basic code optimization.
-7.  The system stores the generated code.
-
-**Postconditions:**
-
-*   The modern codebase is automatically generated and stored in the system.
-
-**Alternative Flows:**
-
-*   **Code Generation Error:** If an error occurs during code generation, the system logs the error and notifies the System Administrator.
-*   **Incompatible Code Snippet:** If a specific piece of legacy code cannot be translated, the system flags the code and requires manual intervention.
-
-### 4. Adapt Code to Specific Use Case
-
-**Description:** This use case describes the AI-driven adaptation of the modernized code to specific use cases, ensuring the new application meets evolving business requirements.
-
-**Actors:**
-
-*   **System Administrator/Business Analyst:** Defines the specific use cases and associated requirements.
-*   **AI Adaptation Engine:** Adapts the modernized code to specific use cases.
-
-**Preconditions:**
-
-*   The modern codebase has been generated.
-*   Specific use cases and requirements are defined.
-
-**Main Flow:**
-
-1.  The System Administrator/Business Analyst defines the specific use cases and their associated requirements.
-2.  The System Administrator inputs the use case definitions into the system.
-3.  The AI Adaptation Engine analyzes the generated code and the use case definitions.
-4.  The AI Adaptation Engine modifies the generated code to implement the specific use case functionality.
-5.  The AI Adaptation Engine generates unit tests for the implemented use case.
-6.  The system stores the adapted code and unit tests.
-
-**Postconditions:**
-
-*   The modernized code is adapted to specific use cases.
-*   Unit tests for the implemented use cases are generated.
-
-**Alternative Flows:**
-
-*   **Conflicting Requirements:** If the use case requirements conflict with the existing code, the system flags the conflict and requires manual resolution.
-*   **Adaptation Failure:** If the AI Adaptation Engine fails to adapt the code, the system logs the error and notifies the System Administrator.
-
-### 5. Select Target Framework
-
-**Description:** This use case allows the System Administrator to select the appropriate target framework for the modernized application.
-
-**Actors:**
-
-*   **System Administrator:** Selects the target framework.
-
-**Preconditions:**
-
-*   The AI-Driven Legacy Code Modernization system is operational.
-
-**Main Flow:**
-
-1.  The System Administrator navigates to the Target Framework Selection module.
-2.  The System Administrator reviews the list of supported target frameworks (e.g., React, Angular, Vue.js for the front-end; Spring Boot, Node.js, .NET Core for the back-end).
-3.  The System Administrator selects the desired target framework.
-4.  The system saves the selected target framework.
-
-**Postconditions:**
-
-*   The target framework is selected and saved.
-
-**Alternative Flows:**
-
-*   **Invalid Selection:** If the System Administrator attempts to select an invalid target framework, the system displays an error message.
-
-### 6. Enhance Maintainability
-
-**Description:** This use case focuses on ensuring that the generated code adheres to modern coding standards and best practices, resulting in a more maintainable and scalable application.  This is an ongoing process throughout the code generation and adaptation phases.
-
-**Actors:**
-
-*   **Code Generation Engine:** Generates code following maintainability standards.
-*   **AI Code Quality Analyzer:** Analyzes the generated code for maintainability issues.
-
-**Preconditions:**
-
-*   Code is being generated or has been generated.
-*   Coding standards and best practices are defined.
-
-**Main Flow:**
-
-1.  The Code Generation Engine generates code.
-2.  The AI Code Quality Analyzer analyzes the generated code for code smells, potential bugs, and adherence to coding standards.
-3.  The AI Code Quality Analyzer generates a report with identified maintainability issues.
-4.  The Code Generation Engine (or a developer in a manual review step) addresses the identified maintainability issues.
-5.  The process repeats as code is generated and adapted.
-
-**Postconditions:**
-
-*   The generated code adheres to modern coding standards and best practices.
-*   A maintainable and scalable application is produced.
-
-**Alternative Flows:**
-
-*   **Unresolvable Issues:** If the AI Code Quality Analyzer identifies an issue that cannot be automatically resolved, the system flags the issue for manual review.
-*   **Coding Standard Update:** If coding standards are updated, the AI Code Quality Analyzer is updated to reflect the new standards.
-
-### 7. Scale Modernization Process
-
-**Description:** This use case ensures the system can handle large and complex legacy systems, providing a scalable solution for modernization initiatives of any size.
-
-**Actors:**
-
-*   **System:** Handles the processing of large codebases and data volumes.
-
-**Preconditions:**
-
-*   The AI-Driven Legacy Code Modernization system is operational.
-*   Sufficient hardware resources (CPU, memory, storage) are available.
-
-**Main Flow:**
-
-1.  The system ingests a large and complex legacy system.
-2.  The system distributes the analysis and code generation tasks across multiple processing units or servers.
-3.  The system monitors resource utilization to ensure optimal performance.
-4.  The system automatically scales resources as needed to handle increasing workloads.
-
-**Postconditions:**
-
-*   The system successfully modernizes large and complex legacy systems.
-
-**Alternative Flows:**
-
-*   **Resource Exhaustion:** If the system exhausts available resources, it alerts the System Administrator to provision additional resources.
-*   **Performance Degradation:** If performance degrades due to high workload, the system automatically optimizes the processing parameters.
 ```
-## verify_task
-# Introduction: AI-Driven Legacy Code Modernization
-
-This project focuses on AI-Driven Legacy Code Modernization, employing a scalable approach to transform outdated systems. The core objective is to automate the modernization process by leveraging artificial intelligence to analyze legacy code and generate modern, maintainable applications.
-
-The system is designed to create a structured front-end and back-end architecture based on the specific use case and target framework. Following the architecture generation, the system automatically generates code, significantly reducing the manual effort and time required for legacy code modernization. This approach ensures that the modernized application is aligned with current technology standards and best practices.
 
 ----------
 
+```markdown
 ## Functionality
 
-The AI-Driven Legacy Code Modernization system provides the following core functionalities:
+The AI-Driven Legacy Code Modernization system provides a comprehensive solution for transforming legacy codebases into modern, maintainable applications. It achieves this through a combination of intelligent analysis, automated architecture generation, and AI-powered code transformation. The system's functionality can be broken down into the following key areas:
 
-*   **Legacy Code Analysis:** Employs AI algorithms to thoroughly analyze the structure, dependencies, and functionality of the legacy code. This analysis forms the foundation for understanding the existing system and planning the modernization strategy.
-*   **Architecture Generation:** Automatically generates a modern application architecture tailored to the specific needs of the legacy system and the target framework. This includes defining the front-end and back-end structure, API endpoints, and data models.
-*   **Automated Code Generation:** Converts the legacy code into a modern codebase based on the generated architecture. This involves translating the original code into the target language and framework, while ensuring functionality is preserved and optimized.
-*   **Use Case Specific Adaptation:** The AI intelligently adapts the modernized code to specific use cases, ensuring that the new application meets the evolving requirements of the business.
-*   **Target Framework Compatibility:** The system supports multiple target frameworks, allowing users to choose the most appropriate technology stack for their modernized application.
-*   **Maintainability Enhancement:** The generated code adheres to modern coding standards and best practices, resulting in a more maintainable and scalable application.
-*   **Scalable Modernization Process:** The system is designed to handle large and complex legacy systems, providing a scalable solution for modernization initiatives of any size.
+**1. Requirement Analysis and Planning:**
+
+*   **Requirement Gathering:** The process begins with a thorough understanding of the legacy system. This involves analyzing the existing code structure, identifying key functionalities, and determining the target framework for modernization.
+*   **Feasibility Study:** An AI-driven feasibility study assesses the suitability of different parts of the legacy system for automated modernization. This helps prioritize efforts and identify areas where manual intervention may be required.
+*   **Architecture Planning:** Based on the gathered requirements and feasibility study, the system defines the optimal back-end and front-end folder structures, along with API contracts for communication between the two. This stage leverages AI to propose architectures that align with modern best practices and the specific use case.
+
+**2. Front-end Development:**
+
+*   **UI Design:** The system includes a user-friendly interface for uploading legacy code, specifying target frameworks, and viewing the modernized output. High-level wireframes and screens are designed to ensure a seamless user experience.
+*   **React Frontend Setup:** A React-based front-end is initialized with a well-defined folder structure, routing, and theming to provide a solid foundation for the user interface.
+*   **User Input Page:** This page allows users to upload their legacy code and specify the desired target framework for modernization.
+*   **Output Viewer:** The system displays the AI-generated modernized code in a clear and organized manner, allowing users to easily review and validate the results.
+*   **API Integration:** The front-end interacts with the back-end services through well-defined APIs to trigger the transformation process and retrieve the modernized code.
+
+**3. Back-end Development:**
+
+*   **FastAPI Setup:** A FastAPI-based back-end is established to handle the core logic of the modernization process. This includes setting up the environment, defining the folder structure, and implementing the necessary APIs.
+*   **Upload and Parse Legacy Code:** The back-end accepts uploaded legacy code, extracts its structure, and prepares it for AI-driven transformation.
+*   **AI Integration Logic:** This is the heart of the modernization process. The system formulates effective prompts based on the legacy code and sends them to a GPT/OpenAI API to generate modernized code.
+*   **Code Generator:** The back-end receives the modernized code generated by the AI model and stores it for retrieval by the front-end.
+*   **Logging & Error Handling:** Robust logging and error handling mechanisms are implemented to ensure system stability and maintainability.
+
+**4. AI Prompt Design & Optimization:**
+
+*   **Prompt Design:** Careful attention is given to designing effective prompt structures that guide the AI model in accurately converting legacy code to modern equivalents. This includes specifying desired coding styles, frameworks, and best practices.
+*   **Test & Tuning:** The prompts are rigorously tested and tuned using different legacy code formats to optimize the quality and accuracy of the generated code.
+
+**5. Testing & Deployment:**
+
+*   **Unit Testing:** Both the front-end and back-end components are thoroughly tested using unit tests to ensure their individual functionality.
+*   **Integration Testing:** End-to-end integration tests are performed to verify the complete flow of the system, from code upload to result display.
+*   **Dockerization:** The back-end is containerized using Docker to ensure portability and ease of deployment.
+*   **Deployment:** The system is deployed on a cloud platform (e.g., Azure/AWS) for accessibility and scalability.
+
+**6. Documentation & Buffer:**
+
+*   **Technical Docs:** Comprehensive technical documentation is provided, including a README, architecture flow diagrams, and API usage guidelines.
+*   **User Guide:** A user guide is created to assist users in effectively using the application.
+*   **Buffer:** Time is allocated for addressing unplanned changes and incorporating user feedback.
+
+**Overall Workflow:**
+
+1.  The user uploads legacy code through the front-end interface.
+2.  The user specifies the target framework and any relevant configuration options.
+3.  The front-end sends the code and configuration to the back-end via API.
+4.  The back-end parses the legacy code and formulates a prompt for the AI model.
+5.  The back-end sends the prompt to the AI model (GPT/OpenAI).
+6.  The AI model generates modernized code based on the prompt.
+7.  The back-end receives the modernized code and stores it.
+8.  The front-end retrieves the modernized code from the back-end and displays it to the user.
+
+This workflow ensures a streamlined and automated process for modernizing legacy code, reducing manual effort and accelerating the transition to modern technologies.
+```
 
 ----------
 
-## Use Case Explanations
-
-This section details each use case within the AI-Driven Legacy Code Modernization system, providing a comprehensive understanding of their purpose, actors, and flow.
-
-### 1. Analyze Legacy Code
-
-**Description:** This use case describes the process of analyzing existing legacy code using AI algorithms to understand its structure, dependencies, and functionality. The analysis provides the foundation for creating an effective modernization strategy.
-
-**Actors:**
-
-*   **System Administrator:** Initiates the analysis process by uploading or pointing the system to the legacy code repository.
-*   **AI Analysis Engine:** Automatically analyzes the legacy code.
-
-**Preconditions:**
-
-*   The AI-Driven Legacy Code Modernization system is operational.
-*   The legacy code is accessible to the system.
-*   Appropriate user authentication and authorization are in place.
-
-**Main Flow:**
-
-1.  The System Administrator logs into the system and navigates to the Legacy Code Analysis module.
-2.  The System Administrator uploads the legacy code or provides a connection string to the legacy code repository.
-3.  The System Administrator configures the analysis parameters (e.g., programming language, code complexity thresholds).
-4.  The System Administrator initiates the analysis.
-5.  The AI Analysis Engine parses the legacy code.
-6.  The AI Analysis Engine identifies code structure, dependencies, and potential issues.
-7.  The AI Analysis Engine generates a report summarizing the analysis results, including code complexity metrics, dependency graphs, and identified anti-patterns.
-8.  The system stores the analysis report.
-9.  The System Administrator reviews the analysis report.
-
-**Postconditions:**
-
-*   An analysis report of the legacy code is generated and stored in the system.
-*   The System Administrator has reviewed the analysis report and has a clear understanding of the legacy code's characteristics.
-
-**Alternative Flows:**
-
-*   **Invalid Code Input:** If the uploaded code is invalid or unsupported, the system displays an error message and prompts the System Administrator to provide valid code.
-*   **Analysis Failure:** If the analysis fails due to unexpected errors, the system logs the error and notifies the System Administrator.
-
-### 2. Generate Modern Architecture
-
-**Description:** This use case defines the automatic generation of a modern application architecture based on the legacy code analysis and specified target framework. The architecture includes front-end and back-end structures, API endpoints, and data models.
-
-**Actors:**
-
-*   **System Administrator:** Configures the target framework and architectural preferences.
-*   **Architecture Generation Engine:** Automatically generates the modern application architecture.
-
-**Preconditions:**
-
-*   The legacy code analysis has been completed.
-*   The target framework and architectural preferences are defined.
-
-**Main Flow:**
-
-1.  The System Administrator navigates to the Architecture Generation module.
-2.  The System Administrator selects the target framework (e.g., React, Angular, Vue.js for the front-end; Spring Boot, Node.js, .NET Core for the back-end).
-3.  The System Administrator specifies architectural preferences (e.g., microservices, monolithic).
-4.  The System Administrator initiates the architecture generation.
-5.  The Architecture Generation Engine analyzes the legacy code analysis report.
-6.  The Architecture Generation Engine designs the front-end structure, including UI components and navigation flows.
-7.  The Architecture Generation Engine designs the back-end structure, including API endpoints, data models, and business logic components.
-8.  The Architecture Generation Engine generates a detailed architecture blueprint.
-9.  The system stores the architecture blueprint.
-10. The System Administrator reviews and approves the architecture blueprint.
-
-**Postconditions:**
-
-*   A modern application architecture blueprint is generated and stored in the system.
-*   The System Administrator has reviewed and approved the architecture blueprint.
-
-**Alternative Flows:**
-
-*   **Unsupported Framework:** If the selected target framework is not supported, the system displays an error message.
-*   **Architecture Generation Failure:** If the architecture generation fails, the system logs the error and notifies the System Administrator.
-*   **Architecture Modification Request:** If the System Administrator requires architectural changes the architecture generation engine can regenerate according to input.
-
-### 3. Automatically Generate Code
-
-**Description:** This use case details the automatic generation of modern code from legacy code based on the generated architecture. This includes translating the original code into the target language and framework while preserving and optimizing functionality.
-
-**Actors:**
-
-*   **Code Generation Engine:** Automatically converts the legacy code into a modern codebase.
-
-**Preconditions:**
-
-*   The modern architecture has been generated and approved.
-*   The target framework has been selected.
-
-**Main Flow:**
-
-1.  The Code Generation Engine retrieves the legacy code analysis report and the architecture blueprint.
-2.  The Code Generation Engine translates the legacy code into the target language and framework.
-3.  The Code Generation Engine generates the front-end code based on the front-end architecture.
-4.  The Code Generation Engine generates the back-end code based on the back-end architecture.
-5.  The Code Generation Engine integrates the generated code components.
-6.  The Code Generation Engine performs basic code optimization.
-7.  The system stores the generated code.
-
-**Postconditions:**
-
-*   The modern codebase is automatically generated and stored in the system.
-
-**Alternative Flows:**
-
-*   **Code Generation Error:** If an error occurs during code generation, the system logs the error and notifies the System Administrator.
-*   **Incompatible Code Snippet:** If a specific piece of legacy code cannot be translated, the system flags the code and requires manual intervention.
-
-### 4. Adapt Code to Specific Use Case
-
-**Description:** This use case describes the AI-driven adaptation of the modernized code to specific use cases, ensuring the new application meets evolving business requirements.
-
-**Actors:**
-
-*   **System Administrator/Business Analyst:** Defines the specific use cases and associated requirements.
-*   **AI Adaptation Engine:** Adapts the modernized code to specific use cases.
-
-**Preconditions:**
-
-*   The modern codebase has been generated.
-*   Specific use cases and requirements are defined.
-
-**Main Flow:**
-
-1.  The System Administrator/Business Analyst defines the specific use cases and their associated requirements.
-2.  The System Administrator inputs the use case definitions into the system.
-3.  The AI Adaptation Engine analyzes the generated code and the use case definitions.
-4.  The AI Adaptation Engine modifies the generated code to implement the specific use case functionality.
-5.  The AI Adaptation Engine generates unit tests for the implemented use case.
-6.  The system stores the adapted code and unit tests.
-
-**Postconditions:**
-
-*   The modernized code is adapted to specific use cases.
-*   Unit tests for the implemented use cases are generated.
-
-**Alternative Flows:**
-
-*   **Conflicting Requirements:** If the use case requirements conflict with the existing code, the system flags the conflict and requires manual resolution.
-*   **Adaptation Failure:** If the AI Adaptation Engine fails to adapt the code, the system logs the error and notifies the System Administrator.
-
-### 5. Select Target Framework
-
-**Description:** This use case allows the System Administrator to select the appropriate target framework for the modernized application.
-
-**Actors:**
-
-*   **System Administrator:** Selects the target framework.
-
-**Preconditions:**
-
-*   The AI-Driven Legacy Code Modernization system is operational.
-
-**Main Flow:**
-
-1.  The System Administrator navigates to the Target Framework Selection module.
-2.  The System Administrator reviews the list of supported target frameworks (e.g., React, Angular, Vue.js for the front-end; Spring Boot, Node.js, .NET Core for the back-end).
-3.  The System Administrator selects the desired target framework.
-4.  The system saves the selected target framework.
-
-**Postconditions:**
-
-*   The target framework is selected and saved.
-
-**Alternative Flows:**
-
-*   **Invalid Selection:** If the System Administrator attempts to select an invalid target framework, the system displays an error message.
-
-### 6. Enhance Maintainability
-
-**Description:** This use case focuses on ensuring that the generated code adheres to modern coding standards and best practices, resulting in a more maintainable and scalable application.  This is an ongoing process throughout the code generation and adaptation phases.
-
-**Actors:**
-
-*   **Code Generation Engine:** Generates code following maintainability standards.
-*   **AI Code Quality Analyzer:** Analyzes the generated code for maintainability issues.
-
-**Preconditions:**
-
-*   Code is being generated or has been generated.
-*   Coding standards and best practices are defined.
-
-**Main Flow:**
-
-1.  The Code Generation Engine generates code.
-2.  The AI Code Quality Analyzer analyzes the generated code for code smells, potential bugs, and adherence to coding standards.
-3.  The AI Code Quality Analyzer generates a report with identified maintainability issues.
-4.  The Code Generation Engine (or a developer in a manual review step) addresses the identified maintainability issues.
-5.  The process repeats as code is generated and adapted.
-
-**Postconditions:**
-
-*   The generated code adheres to modern coding standards and best practices.
-*   A maintainable and scalable application is produced.
-
-**Alternative Flows:**
-
-*   **Unresolvable Issues:** If the AI Code Quality Analyzer identifies an issue that cannot be automatically resolved, the system flags the issue for manual review.
-*   **Coding Standard Update:** If coding standards are updated, the AI Code Quality Analyzer is updated to reflect the new standards.
-
-### 7. Scale Modernization Process
-
-**Description:** This use case ensures the system can handle large and complex legacy systems, providing a scalable solution for modernization initiatives of any size.
-
-**Actors:**
-
-*   **System:** Handles the processing of large codebases and data volumes.
-
-**Preconditions:**
-
-*   The AI-Driven Legacy Code Modernization system is operational.
-*   Sufficient hardware resources (CPU, memory, storage) are available.
-
-**Main Flow:**
-
-1.  The system ingests a large and complex legacy system.
-2.  The system distributes the analysis and code generation tasks across multiple processing units or servers.
-3.  The system monitors resource utilization to ensure optimal performance.
-4.  The system automatically scales resources as needed to handle increasing workloads.
-
-**Postconditions:**
-
-*   The system successfully modernizes large and complex legacy systems.
-
-**Alternative Flows:**
-
-*   **Resource Exhaustion:** If the system exhausts available resources, it alerts the System Administrator to provision additional resources.
-*   **Performance Degradation:** If performance degrades due to high workload, the system automatically optimizes the processing parameters.
+```markdown
+## Use Cases
+
+This section details the use cases for the AI-Driven Legacy Code Modernization system. Each use case description includes the actors involved, the workflow, and the expected outcomes.
+
+**1. Requirement Gathering**
+
+*   **Actors:** Business Analyst, System Architect, Legacy Code Expert
+*   **Workflow:**
+    1.  The Business Analyst conducts interviews with stakeholders to understand the business needs and goals for modernizing the legacy system.
+    2.  The System Architect analyzes the existing legacy system's architecture, dependencies, and functionalities.
+    3.  The Legacy Code Expert provides insights into the intricacies of the legacy code, potential challenges, and areas requiring special attention.
+    4.  All parties collaborate to define the scope of the modernization effort, identify key functionalities to be preserved, and determine the target framework for modernization.
+*   **Expected Outcomes:**
+    *   A comprehensive document outlining the requirements for the modernized system.
+    *   Identification of the target framework and technologies for modernization.
+    *   A clear understanding of the legacy system's functionalities and dependencies.
+    *   Establishment of success criteria for the modernization project.
+    *   Estimation of the effort required for each modernization task.
+
+**2. Feasibility Study**
+
+*   **Actors:** AI Engine, System Architect
+*   **Workflow:**
+    1.  The System Architect inputs the legacy code into the AI Engine.
+    2.  The AI Engine analyzes the code for complexity, dependencies, and potential areas of concern.
+    3.  The AI Engine generates a report outlining the feasibility of automatically modernizing different parts of the legacy system.
+    4.  The System Architect reviews the report and identifies areas where manual intervention may be required.
+*   **Expected Outcomes:**
+    *   A feasibility report indicating the percentage of code that can be automatically modernized.
+    *   Identification of specific code sections that require manual refactoring or rewriting.
+    *   An assessment of the risks associated with automated modernization.
+    *   A prioritized list of modules or components for modernization.
+
+**3. Architecture Planning**
+
+*   **Actors:** AI Engine, System Architect, Frontend Developer, Backend Developer
+*   **Workflow:**
+    1.  The System Architect provides the AI Engine with the requirements document, target framework, and feasibility study results.
+    2.  The AI Engine proposes a high-level architecture for the modernized system, including the front-end and back-end folder structures, API contracts, and technology stack.
+    3.  The System Architect, Frontend Developer, and Backend Developer review the proposed architecture and provide feedback.
+    4.  The architecture is refined based on the feedback, ensuring it aligns with modern best practices, scalability requirements, and maintainability considerations.
+*   **Expected Outcomes:**
+    *   A well-defined architecture for the modernized system, including front-end and back-end components.
+    *   Clear API contracts for communication between the front-end and back-end.
+    *   A detailed folder structure for both the front-end and back-end.
+    *   Selection of appropriate technologies and frameworks for each component.
+
+**4. UI Design**
+
+*   **Actors:** UI/UX Designer, Frontend Developer
+*   **Workflow:**
+    1.  The UI/UX Designer creates wireframes and mockups for the user interface, focusing on usability and user experience.
+    2.  The wireframes and mockups are reviewed by stakeholders and the Frontend Developer.
+    3.  The UI/UX Designer refines the design based on the feedback, ensuring it aligns with the requirements and branding guidelines.
+    4.  The Frontend Developer provides technical input on the feasibility of implementing the design.
+*   **Expected Outcomes:**
+    *   High-fidelity wireframes and mockups for the user interface.
+    *   A style guide defining the visual elements and branding of the application.
+    *   A user-friendly interface for uploading legacy code, specifying target frameworks, and viewing the modernized output.
+
+**5. React Frontend Setup**
+
+*   **Actors:** Frontend Developer
+*   **Workflow:**
+    1.  The Frontend Developer initializes a React project with a well-defined folder structure, including components, pages, and utilities.
+    2.  Routing is configured to handle navigation between different pages.
+    3.  Theming is implemented to ensure a consistent look and feel across the application.
+    4.  Essential libraries and dependencies are installed.
+*   **Expected Outcomes:**
+    *   A fully functional React frontend application.
+    *   A well-organized folder structure for maintainability.
+    *   Configured routing for navigation.
+    *   A consistent theme applied across the application.
+
+**6. User Input Page**
+
+*   **Actors:** User, Frontend Developer
+*   **Workflow:**
+    1.  The Frontend Developer creates a user interface that allows the user to upload legacy code and specify the target framework for modernization.
+    2.  The page includes input fields for specifying configuration options, such as coding style and API keys.
+    3.  The user uploads the legacy code and configures the modernization settings.
+*   **Expected Outcomes:**
+    *   A user-friendly interface for uploading legacy code and configuring modernization settings.
+    *   Validation of user inputs to prevent errors.
+    *   Ability to specify the target framework and configuration options for modernization.
+
+**7. Output Viewer**
+
+*   **Actors:** User, Frontend Developer
+*   **Workflow:**
+    1.  The Frontend Developer creates a user interface that displays the AI-generated modernized code in a clear and organized manner.
+    2.  The output viewer includes features such as syntax highlighting, code folding, and diffing.
+    3.  The user reviews the modernized code and validates the results.
+*   **Expected Outcomes:**
+    *   A user-friendly interface for viewing the modernized code.
+    *   Clear and organized presentation of the generated code.
+    *   Features for comparing the original and modernized code.
+    *   Ability to download the modernized code.
+
+**8. API Integration**
+
+*   **Actors:** Frontend Developer, Backend Developer
+*   **Workflow:**
+    1.  The Frontend Developer integrates the front-end with the back-end APIs to trigger the transformation process and retrieve the modernized code.
+    2.  API calls are made to upload the legacy code, specify the target framework, and retrieve the generated code.
+    3.  Error handling is implemented to gracefully handle API failures.
+*   **Expected Outcomes:**
+    *   Seamless communication between the front-end and back-end.
+    *   Successful invocation of the modernization process via API.
+    *   Retrieval of the modernized code from the back-end.
+    *   Robust error handling for API failures.
+
+**9. FastAPI Setup**
+
+*   **Actors:** Backend Developer
+*   **Workflow:**
+    1.  The Backend Developer sets up a FastAPI project, including the environment, folder structure, and dependencies.
+    2.  API endpoints are defined for uploading legacy code, triggering modernization, and retrieving the generated code.
+    3.  Middleware is configured for authentication, logging, and error handling.
+*   **Expected Outcomes:**
+    *   A fully functional FastAPI backend application.
+    *   Well-defined API endpoints for the front-end to interact with.
+    *   A robust and scalable backend architecture.
+
+**10. Upload and Parse Legacy Code**
+
+*   **Actors:** Backend Developer, AI Engine
+*   **Workflow:**
+    1.  The Backend Developer implements the API endpoint for uploading legacy code.
+    2.  The uploaded code is parsed to extract its structure, dependencies, and functionalities.
+    3.  The parsed code is prepared for AI-driven transformation.
+*   **Expected Outcomes:**
+    *   Successful upload of legacy code to the backend.
+    *   Accurate extraction of the code's structure and dependencies.
+    *   Preparation of the code for AI-driven transformation.
+
+**11. AI Integration Logic**
+
+*   **Actors:** Backend Developer, AI Engine
+*   **Workflow:**
+    1.  The Backend Developer formulates an effective prompt based on the parsed legacy code and the specified target framework.
+    2.  The prompt is sent to a GPT/OpenAI API to generate modernized code.
+    3.  The API response is processed to extract the generated code.
+*   **Expected Outcomes:**
+    *   Effective prompt formulation based on the legacy code.
+    *   Successful communication with the GPT/OpenAI API.
+    *   Generation of modernized code by the AI model.
+
+**12. Code Generator**
+
+*   **Actors:** Backend Developer
+*   **Workflow:**
+    1.  The Backend Developer receives the modernized code generated by the AI model.
+    2.  The code is stored in a database or file system.
+    3.  The code is made available for retrieval by the front-end.
+*   **Expected Outcomes:**
+    *   Reliable storage of the modernized code.
+    *   Easy retrieval of the code by the front-end.
+
+**13. Logging & Error Handling**
+
+*   **Actors:** Backend Developer
+*   **Workflow:**
+    1.  The Backend Developer implements robust logging mechanisms to track system activity and errors.
+    2.  Error handling is implemented to gracefully handle unexpected situations and prevent system crashes.
+    3.  Alerts are configured to notify administrators of critical errors.
+*   **Expected Outcomes:**
+    *   Detailed logs for debugging and troubleshooting.
+    *   Graceful handling of errors to prevent system crashes.
+    *   Proactive notification of critical errors to administrators.
+
+**14. Prompt Design**
+
+*   **Actors:** AI Engineer, Linguist
+*   **Workflow:**
+    1.  The AI Engineer works with a linguist to craft prompts that accurately represent the intent of the code transformation.
+    2.  Prompts are designed to elicit specific coding styles, framework usage, and best practices from the AI model.
+*   **Expected Outcomes:**
+    *   Well-structured prompts that guide the AI model in generating high-quality modernized code.
+    *   Prompts that accurately capture the desired coding style and framework usage.
+
+**15. Test & Tuning**
+
+*   **Actors:** AI Engineer, Tester
+*   **Workflow:**
+    1.  The AI Engineer tests the prompts using different legacy code formats.
+    2.  The Tester evaluates the quality and accuracy of the generated code.
+    3.  The prompts are tuned based on the test results to optimize the AI model's performance.
+*   **Expected Outcomes:**
+    *   Optimized prompts that consistently generate high-quality modernized code.
+    *   Improved accuracy and reliability of the AI model.
+
+**16. Unit Testing**
+
+*   **Actors:** Frontend Developer, Backend Developer, Tester
+*   **Workflow:**
+    1.  The Frontend Developer and Backend Developer write unit tests to verify the functionality of their respective components.
+    2.  The Tester executes the unit tests and reports any failures.
+    3.  The developers fix any bugs identified by the unit tests.
+*   **Expected Outcomes:**
+    *   Thorough testing of individual components.
+    *   Identification and resolution of bugs early in the development cycle.
+    *   Increased confidence in the quality of the code.
+
+**17. Integration Testing**
+
+*   **Actors:** Tester
+*   **Workflow:**
+    1.  The Tester performs end-to-end integration tests to verify the complete flow of the system, from code upload to result display.
+    2.  The Tester reports any integration issues.
+    3.  The developers fix any integration issues identified by the tests.
+*   **Expected Outcomes:**
+    *   Verification of the complete system flow.
+    *   Identification and resolution of integration issues.
+    *   Ensuring that all components work together seamlessly.
+
+**18. Dockerization**
+
+*   **Actors:** DevOps Engineer
+*   **Workflow:**
+    1.  The DevOps Engineer creates a Dockerfile for the backend application.
+    2.  The Dockerfile is used to build a Docker image.
+    3.  The Docker image is pushed to a container registry.
+*   **Expected Outcomes:**
+    *   A containerized backend application.
+    *   Improved portability and ease of deployment.
+    *   Consistent environment across different environments.
+
+**19. Deployment**
+
+*   **Actors:** DevOps Engineer
+*   **Workflow:**
+    1.  The DevOps Engineer sets up the necessary infrastructure on a cloud platform (e.g., Azure/AWS).
+    2.  The Docker image is deployed to the cloud platform.
+    3.  The application is configured for accessibility and scalability.
+*   **Expected Outcomes:**
+    *   A deployed and fully functional application on a cloud platform.
+    *   Scalability to handle increasing user traffic.
+    *   High availability and reliability.
+
+**20. Technical Docs**
+
+*   **Actors:** Technical Writer, System Architect
+*   **Workflow:**
+    1.  The Technical Writer creates comprehensive technical documentation, including a README, architecture flow diagrams, and API usage guidelines.
+    2.  The System Architect reviews the documentation for accuracy and completeness.
+*   **Expected Outcomes:**
+    *   Clear and accurate technical documentation.
+    *   Easy understanding of the system architecture and functionality.
+    *   Facilitation of maintenance and future development.
+
+**21. User Guide**
+
+*   **Actors:** Technical Writer
+*   **Workflow:**
+    1.  The Technical Writer creates a user guide to assist users in effectively using the application.
+    2.  The user guide includes step-by-step instructions, screenshots, and troubleshooting tips.
+*   **Expected Outcomes:**
+    *   A user-friendly guide for using the application.
+    *   Increased user satisfaction and adoption.
+    *   Reduced support requests.
+
+**22. Buffer**
+
+*   **Actors:** Project Manager, All Team Members
+*   **Workflow:**
+    1. The project manager monitors the progress of the project and identifies potential risks and delays.
+    2. The team members communicate any issues or challenges they are facing.
+    3. The buffer time is used to address unplanned changes, incorporate user feedback, and resolve any unforeseen issues.
+*   **Expected Outcomes:**
+    *   Successful completion of the project within the allocated timeframe.
+    *   Flexibility to handle unexpected changes and challenges.
+    *   Improved quality and user satisfaction.
+```

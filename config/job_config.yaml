@@ -1,12 +1,30 @@
-# This file defines a specific job for the crew to execute.
-crew_name: "Document Crew"
-usecase: "Document"
+crew_name: "Copy Crew"
+usecase: "copy"
+module_name: "copy"
 
-# Runtime parameters for this specific job
-module_name: "document"
-output_dir_path: "output/intermediate/document_crew" # Made it more specific for this run
+crews:
+  copy_crew:
+#    knowledge_sources:
+#      - "./docs/shared_project_guidelines.md"
+#      - "./docs/style_guide.txt"
+#    input:
+#      source: "file"
+#      path: "E:/Python/data/raw/features.json"
+    steps:
+      - task_key: "functionality_task"
+        agent_key: "writer_config"
+      - task_key: "usecase_task"
+        agent_key: "usecase_config"
+      - task_key: "verify_task"
+        agent_key: "verifier_config"
+      - task_key: "introduction_task"
+        agent_key: "writer_config"
+#    knowledge_sources:
+#      - "./data/market_research_summary.csv"
+#      - "./data/competitor_analysis.pdf"
+#      - "./data/user_feedback.txt"
 
-# The 'inputs' dictionary will be passed to the crew's kickoff method.
-inputs:
-  topic: "A new AI-powered coffee machine"
-  target_audience: "Tech enthusiasts and busy professionals"
+
+pipeline:
+  - "document_crew"
+

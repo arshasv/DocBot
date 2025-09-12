@@ -1,5 +1,9 @@
 task:
-  name: Functionality Documentation  
-  description: Generate functionality section from overview and estimation
-  expected_output: Markdown section with functional explanation
+  name: functionality_task
+  description: 
+    Produce a functionality section based on the overview {overview} and estimation {estimation}.
+    Highlight the system’s main features, technical scope, and overall workflow.
+  expected_output: 
+    A markdown "Functionality" section that explains system behavior and
+    outlines the key technical components.
   agent: gemini_writer

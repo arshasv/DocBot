@@ -1,5 +1,9 @@
 task:
-  name: Introduction Documentation  
-  description: Generate introduction from the overview document
-  expected_output: Markdown section with project introduction
+  name: introduction_task
+  description: 
+    Generate a clear and concise introduction section using the overview {overview}.
+    Summarize the project purpose, context, and high-level goals.
+  expected_output: 
+    A markdown-formatted "Introduction" section that provides readers with
+    a quick understanding of the project’s background and objectives.
   agent: gemini_writer
